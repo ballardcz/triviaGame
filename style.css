@@ -1,0 +1,61 @@
+.hidden {
+  display: none;
+}
+
+;
+/* body { background-image: src="./lucas-favre-489526-unsplash.jpg"
+
+}; 
+#bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+	
+  min-width: 25%;
+  min-height: 25%;
+}
+ */
+
+body,
+html {
+  height: 100%;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("./lucas-favre-489526-unsplash.jpg");
+  /* Full height */
+  height: 10%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card {
+  text-align: center;
+  position: center;
+  margin: 0 auto;
+  /* Added */
+  float: none;
+  /* Added */
+  margin-bottom: 10px;
+  /* Added */
+}
+
+#start {
+  position: fixed;
+  top: 75%;
+  left: 50%;
+  width: 30em;
+  height: 18em;
+  margin-top: -9em;
+  /*set to a negative number 1/2 of your height*/
+  margin-left: -15em;
+  /*set to a negative number 1/2 of your width*/
+  border: 1px solid #ccc;
+}
+
+#stop {
+  float: middle;
+}
