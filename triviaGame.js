@@ -103,7 +103,7 @@ $(document).ready(function() {
   var questionLength= myQuestions.length;
 
   for (var i = 0; i < myQuestions.length; i++) {
-   var newButton = $('<button>'+ myQuestions[i] + '</button>')
+   var newButton = $('<button>'+ JSON.stringify(myQuestions[i]) + '</button>')
    newButton.appendTo('#here');
 
   };
