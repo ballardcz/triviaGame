@@ -1,13 +1,14 @@
-$(document).ready(function() {
+$(document).ready(function () {
   var number = 12; // var number = 30
 
   var intervalId;
 
+  var counter = 0;
+
   var timesUpGif =
     "https://giphy.com/gifs/independence-day-jeff-goldblum-hurry-rqSrBWn4xyPNm";
 
-  var myQuestions = [
-    {
+  var myQuestions = [{
       question: "How many miles in a light-year?",
       answers: {
         a: "Infinity and Beyond/ miles",
@@ -37,21 +38,18 @@ $(document).ready(function() {
       correctAnswer: "b"
     }
   ];
-  // console.log(myQuestions[0].answers);
-  // console.log(myQuestions[1]);
-  // console.log(myQuestions[2]);
 
-  // we'll need a place to store the HTML output
-  // var output = [];
-  //  $("poptop").append("");
 
- 
-
-  // var questionNumber = function() {
-  //   for (var i = 0; (i = myQuestions.questions.answers.length); i++) {
-  //     console.log(questionNumber);
-  //   }
-  // };
+  var myBigArray = {
+    questions: {
+      items: ["How many miles in a light-year?", "Which object falls faster?", "What is the best smash brother character?"],
+    },
+    answers: {
+      item1: ["Infinity and Beyond/ miles", "about 5.878625 trillion miles", "15,878,625,373,183.6 miles"],
+      item2: ["Bowling ball", "feather", "Neither"],
+      item3: ["Link", "Pit", "kirby", "Ike", "Mr.Game"],
+    }
+  }
 
   $("#stop").on("click", stop);
   $("#start").on("click", start);
@@ -84,31 +82,60 @@ $(document).ready(function() {
 
   //       // ...add an HTML radio button
 
-        var newButton = $("<button>");
-  //       newButton.text(myQuestions.answers[])
 
   function start() {
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
 
-    $(function() {
-      $("#first").removeClass("hidden");
-    });
-
+    $("#first").removeClass("hidden");
+    
     $("#start").addClass("hidden");
 
     $("#stop").addClass("hidden");
-  
 
-  var questionLength= myQuestions.length;
+    var q = myBigArray.questions.items;
+    var a = myBigArray.answers.item1;
+    if (counter === 0) {
 
-  for (var i = 0; i < myQuestions.length; i++) {
-   var newButton = $('<button>'+ JSON.stringify(myQuestions[i]) + '</button>')
-   newButton.appendTo('#here');
+    for (var i = 0; i < q.length; i++) {
+     if (myBigArray.questions.items[i] === "Which object falls faster?") {
+      var newtag = $('<h2>' + q[i] + '</h2>');
+      $('#here').append(newtag);
+      counter++;
+      console.log(myBigArray.questions.items[i]);
+      for (var i = 0; i < a.length; i++){
+      var newButton = $('<button>' + a[i] + '</button>');
+      $('#here').append(newButton);
+      }
+      //break;
+      }
+      else if (counter === 1 && myBigArray.questions.items[i] === "How many miles in a light-year?") {
+        var newtag = $('<h2>' + q[i] + '</h2>');
+        newtag.append('#here');
+        counter++;
+    }
+    else { console.log("counter:"+ counter);
+    console.log("2nd time"+ myBigArray.questions.items[i]);}
+  }
+    // if (myBigArray.questions.items[i] === "How many miles in a light-year?") {
+    //   var newButton = $('<button>' + q[i] + '</button>')
+    //   newButton.appendTo('#here');
+    //   break;
+    // if (myBigArray.questions.items[0] == $("#here").val()) {
+    //     var newButton = $('<button>' + q[0] + '</button>')
+    //     newButton.appendTo('#here');
+    //   }
+
+
+
+    // for (var i = 0; i < myQuestionsmy.length; i++) {
+    //  var newButton = $('<button>'+ Object.keys(myQuestions[i])[i] + '</button>')
+    //  newButton.appendTo('#here');
+    //  console.log(Object.keys(myQuestions[i])[i])
 
   };
-}
 
+  }
   function decrement() {
     number--;
 
