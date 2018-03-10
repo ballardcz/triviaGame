@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var number = 12; // var number = 30
+  var number = 30; // var number = 30
 
   var intervalId;
 
@@ -8,46 +8,20 @@ $(document).ready(function () {
   var timesUpGif =
     "https://giphy.com/gifs/independence-day-jeff-goldblum-hurry-rqSrBWn4xyPNm";
 
-  var myQuestions = [{
-      question: "How many miles in a light-year?",
-      answers: {
-        a: "Infinity and Beyond/ miles",
-        b: "about 5.878625 trillion miles",
-        c: "15,878,625,373,183.6 miles"
-      },
-      correctAnswer: "b"
-    },
-    {
-      question: "Which object falls faster?",
-      answers: {
-        a: "Bowling ball",
-        b: "feather",
-        c: "Neither"
-      },
-      correctAnswer: "c"
-    },
-    {
-      question: "What is the best smash brother character?",
-      answers: {
-        a: "Link",
-        b: "Pit",
-        c: "kirby",
-        d: "Ike",
-        e: "Mr.Game"
-      },
-      correctAnswer: "b"
-    }
-  ];
-
 
   var myBigArray = {
     questions: {
       items: ["How many miles in a light-year?", "Which object falls faster?", "What is the best smash brother character?"],
     },
     answers: {
-      item1: ["Infinity and Beyond/ miles", "about 5.878625 trillion miles", "15,878,625,373,183.6 miles"],
-      item2: ["Bowling ball", "feather", "Neither"],
-      item3: ["Link", "Pit", "kirby", "Ike", "Mr.Game"],
+      item1: ["Infinity and Beyond/ miles", "About 5.878625 trillion miles", "15,878,625,373,183.6 miles"],
+      item2: ["Bowling ball", "Feather", "Neither"],
+      item3: ["Link", "Pit", "Kirby", "Ike", "Mr.Game"],
+    },
+    right: {
+      correctAnswer: "b",
+      correctAnswer: "c",
+      correctAnswer: "b"
     }
   }
 
@@ -55,16 +29,6 @@ $(document).ready(function () {
   $("#start").on("click", start);
   //this next line is just to  hide the stop button. its still on the page just hidden
   $("#stop").addClass("hidden");
-
-  // $('#f1st').on("click",function() {
-  //   $('#output').html(function(i, val) { return val*1+1 });
-  // });
-  // $('#2nd').on("click",function() {
-  //   $('#output').html(function(i, val) { return val*1+1 });
-  // });
-  // $('#th3d').on("click",function() {
-  //   $('#output').html(function(i, val) { return val*1+1 });
-  // });
 
   // // for each question.../
   // myQuestions.forEach((currentQuestion, questionNumber) => {
@@ -88,73 +52,75 @@ $(document).ready(function () {
     intervalId = setInterval(decrement, 1000);
 
     $("#first").removeClass("hidden");
-    
+
     $("#start").addClass("hidden");
 
     $("#stop").addClass("hidden");
 
+    // its ugly but it works!
     var q = myBigArray.questions.items;
     var a = myBigArray.answers.item1;
+    var b = myBigArray.answers.item2;
     if (counter === 0) {
 
-    for (var i = 0; i < q.length; i++) {
-     if (myBigArray.questions.items[i] === "Which object falls faster?") {
-      var newtag = $('<h2>' + q[i] + '</h2>');
-      $('#here').append(newtag);
-      counter++;
-      console.log(myBigArray.questions.items[i]);
-      for (var i = 0; i < a.length; i++){
-      var newButton = $('<button>' + a[i] + '</button>');
-      $('#here').append(newButton);
+      for (var i = 0; i < q.length; i++) {
+        if (myBigArray.questions.items[i] === "Which object falls faster?") {
+          var newtag = $('<h2>' + q[i] + '</h2>');
+          $('#here').append(newtag);
+          //i consoled logged to help me keep track of where this index item shows up at 
+          console.log(myBigArray.questions.items[i]);
+          for (var i = 0; i < b.length; i++) {
+            var newButton = $('<button>' + b[i] + '</button>');
+            $('#here').append(newButton);
+            $('button').addClass("pop1 btn btn-primary btn-xs");
+          }
+          counter++;
+          //break;
+        }
+        console.log("counter:" + counter);
       }
-      //break;
+    } else if (counter === 1) //&& myBigArray.questions.items[i] == "How many miles in a light-year?") {
+    {
+      for (var i = 0; i < q.length; i++) {
+        if (myBigArray.questions.items[i] == "How many miles in a light-year?") {
+          var newtag = $('<h2>' + q[i] + '</h2>');
+          $('#here').append(newtag);
+          for (var i = 0; i < a.length; i++) {
+            var newButton = $('<button>' + a[i] + '</button>');
+            $('#here').append(newButton);
+            $('button').addClass("pop2 btn btn-warning btn-xs")
+          }
+          counter++;
+        }
       }
-      else if (counter === 1 && myBigArray.questions.items[i] === "How many miles in a light-year?") {
-        var newtag = $('<h2>' + q[i] + '</h2>');
-        newtag.append('#here');
-        counter++;
+    } else {
+      console.log("counter:" + counter);
+      console.log("2nd time" + myBigArray.questions.items2[i]);
     }
-    else { console.log("counter:"+ counter);
-    console.log("2nd time"+ myBigArray.questions.items[i]);}
-  }
-    // if (myBigArray.questions.items[i] === "How many miles in a light-year?") {
-    //   var newButton = $('<button>' + q[i] + '</button>')
-    //   newButton.appendTo('#here');
-    //   break;
-    // if (myBigArray.questions.items[0] == $("#here").val()) {
-    //     var newButton = $('<button>' + q[0] + '</button>')
-    //     newButton.appendTo('#here');
-    //   }
-
-
-
-    // for (var i = 0; i < myQuestionsmy.length; i++) {
-    //  var newButton = $('<button>'+ Object.keys(myQuestions[i])[i] + '</button>')
-    //  newButton.appendTo('#here');
-    //  console.log(Object.keys(myQuestions[i])[i])
-
-  };
 
   }
+
+  $("#")
+
   function decrement() {
     number--;
 
-    $("#timer").html("<h3>" + ":" + number + "</h3>");
+    $("#timer").html("<h3>" + "Remaining Time:" + number + "</h3>");
 
     if (number === 0) {
       stop();
 
-      alert("Time's Up!");
+    //   alert("Time's Up!");
 
-      $("p1").html("done!");
-      $("p2").html("finito");
+    //   $("p1").html("done!");
+    //   $("p2").html("finito");
 
-      //   return{ src="https://giphy.com/gifs/independence-day-jeff-goldblum-hurry-rqSrBWn4xyPNm"
-      // };
-    } else if (number === 6) {
-      //change to 15
-      // audio.play() alert("15 seconds left!");
-    }
+    //   //   return{ src="https://giphy.com/gifs/independence-day-jeff-goldblum-hurry-rqSrBWn4xyPNm"
+    //   // };
+    // //   } else if (number === 6) {
+    //   //change to 15
+    //   // audio.play() alert("15 seconds left!");
+     }
   }
 
   function stop() {
