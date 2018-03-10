@@ -72,35 +72,52 @@ $(document).ready(function () {
           for (var i = 0; i < b.length; i++) {
             var newButton = $('<button>' + b[i] + '</button>');
             $('#here').append(newButton);
-            $('button').addClass("pop1 btn btn-primary btn-xs");
+            $(newButton).addClass("pop1 btn btn-primary btn-xs");
           }
           counter++;
           //break;
         }
         console.log("counter:" + counter);
       }
-    } else if (counter === 1) //&& myBigArray.questions.items[i] == "How many miles in a light-year?") {
-    {
-      for (var i = 0; i < q.length; i++) {
-        if (myBigArray.questions.items[i] == "How many miles in a light-year?") {
-          var newtag = $('<h2>' + q[i] + '</h2>');
-          $('#here').append(newtag);
-          for (var i = 0; i < a.length; i++) {
-            var newButton = $('<button>' + a[i] + '</button>');
-            $('#here').append(newButton);
-            $('button').addClass("pop2 btn btn-warning btn-xs")
-          }
-          counter++;
-        }
-      }
+      // } else if (counter === 1) //&& myBigArray.questions.items[i] == "How many miles in a light-year?") {
+      // {
+      // for (var i = 0; i < q.length; i++) {
+      //   if (myBigArray.questions.items[i] == "How many miles in a light-year?") {
+      //     var newtag = $('<h2>' + q[i] + '</h2>');
+      //     $('#here').append(newtag);
+      //     for (var i = 0; i < a.length; i++) {
+      //       var newButton = $('<button>' + a[i] + '</button>');
+      //       $('#here').append(newButton);
+      //       $('button').addClass("pop2 btn btn-warning btn-xs")
+      //     }
+      //     counter++;
+      //   }
+      // }
     } else {
       console.log("counter:" + counter);
       console.log("2nd time" + myBigArray.questions.items2[i]);
     }
 
-  }
 
-  $("#")
+
+    $(".pop1").on("click", function () {
+      if (counter === 1) {
+        for (var i = 0; i < q.length; i++) {
+          if (myBigArray.questions.items[i] == "How many miles in a light-year?") {
+            var newtag = $('<h2>' + q[i] + '</h2>');
+            $('#here').append(newtag);
+            for (var i = 0; i < a.length; i++) {
+              var newButton = $('<button>' + a[i] + '</button>');
+              $('#here').append(newButton);
+              $(newButton).addClass(" btn btn-warning btn-xs")
+            }
+            counter++;
+          }
+          console.log(counter);
+        }
+      }
+    })
+  }
 
   function decrement() {
     number--;
@@ -110,17 +127,17 @@ $(document).ready(function () {
     if (number === 0) {
       stop();
 
-    //   alert("Time's Up!");
+      //   alert("Time's Up!");
 
-    //   $("p1").html("done!");
-    //   $("p2").html("finito");
+      //   $("p1").html("done!");
+      //   $("p2").html("finito");
 
-    //   //   return{ src="https://giphy.com/gifs/independence-day-jeff-goldblum-hurry-rqSrBWn4xyPNm"
-    //   // };
-    // //   } else if (number === 6) {
-    //   //change to 15
-    //   // audio.play() alert("15 seconds left!");
-     }
+      //   //   return{ src="https://giphy.com/gifs/independence-day-jeff-goldblum-hurry-rqSrBWn4xyPNm"
+      //   // };
+      // //   } else if (number === 6) {
+      //   //change to 15
+      //   // audio.play() alert("15 seconds left!");
+    }
   }
 
   function stop() {
