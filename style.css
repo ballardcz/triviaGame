@@ -6,34 +6,23 @@
   position: relative;
   border-color: #ccc;
 }
-;
-/* body { background-image: src="./lucas-favre-489526-unsplash.jpg"
-
-}; 
-#bg {
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-	
-  min-width: 25%;
-  min-height: 25%;
-}
- */
-
-body,
-html {
-  height: 100%;
-}
 
 .bg {
   /* The image used */
-  background-image: url("./lucas-favre-489526-unsplash.jpg");
-  /* Full height */
-  height: 10%;
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url("./trivia.jpg");
+  z-index: -1;
+}
+
+p.lead {
+  color: white;
+}
+
+h1.display-4 {
+  color: white;
+}
+
+.jumbotron {
+  background-color: black;
 }
 
 .card {
@@ -44,7 +33,7 @@ html {
   float: none;
   /* Added */
   margin-bottom: 10px;
-  /* Added */
+  z-index: auto;
 }
 
 #start {
@@ -58,6 +47,9 @@ html {
   margin-left: -15em;
   /*set to a negative number 1/2 of your width*/
   border: 1px solid #ccc;
+  background-color: black;
+  color: white;
+  z-index: auto;
 }
 
 #stop {
