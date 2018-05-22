@@ -1,5 +1,5 @@
 $(document).ready(function () {
-      var number = 3; // var number = 30
+      var number = 30; // var number = 30
 
       var intervalId;
 
