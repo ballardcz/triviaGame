@@ -7,6 +7,10 @@
   border-color: #ccc;
 }
 
+body,html {
+  background-image: url("./trivia.jpg");
+}
+
 .bg {
   /* The image used */
   background-image: url("./trivia.jpg");
