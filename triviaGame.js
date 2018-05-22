@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var number = 30; // var number = 30
+  var number = 3; // var number = 30
 
   var intervalId;
 
@@ -124,10 +124,9 @@ $(document).ready(function () {
 
     $("#timer").html("<h3>" + "Remaining Time:" + number + "</h3>");
 
-    if (number === 0) {
+    if (number < 0) {
       stop();
-
-      //   alert("Time's Up!");
+      //alert("Time's Up! Try Again!");
 
       //   $("p1").html("done!");
       //   $("p2").html("finito");
@@ -142,10 +141,14 @@ $(document).ready(function () {
 
   function stop() {
     clearInterval(intervalId);
+    alert("Time's Up! Try Again!");
+    var newButton = $('<button>' + "Restart?" + '</button>');
+    $('.card-body').html(newButton);
+    $(newButton).addClass(" btn btn-warning btn-xs")
   }
 
   // function checkRefresh(value)
-  // {
+  // {za
   //     document.form1.submit();
   // }
 
