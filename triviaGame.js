@@ -8,16 +8,17 @@ $(document).ready(function () {
   var timesUpGif =
     "https://giphy.com/gifs/independence-day-jeff-goldblum-hurry-rqSrBWn4xyPNm";
 
-  var myVeryBigArray = [{
+  var myVeryBigArray = [
+    {
       question: "How many miles in a light-year?",
       answers: [
         "Infinity and Beyond/ miles",
         "About 5.878625 trillion miles",
         "15,878,625,373,183.6 miles"
-
       ],
       ifasked: false
-    }, {
+    }, 
+    {
       question: "Which object falls faster?",
       answers: ["Bowling ball", "Feather", "Neither"],
       ifasked: false
@@ -32,15 +33,21 @@ $(document).ready(function () {
       question: "Stratus, Cirrus and Cumulus are types of what?",
       answers: ["Fungi", "Clouds", "Heart Disease", "Bones in feet & Hands"],
       ifasked: false
-    }
+    } 
   ];
 
 //create a new for loopt ha loops through the nested array and print outs the corresponding buttons
 var g = myVeryBigArray.length;
 console.log(g);
 
-for (var i = 0; i < myVeryBigArray.length; i++) {
-  console.log("this hit");
+console.log(myVeryBigArray[0].question);
+console.log(myVeryBigArray[1].question);
+console.log(myVeryBigArray[3].question);
+console.log(myVeryBigArray[0].answers[0]);
+console.log(myVeryBigArray[1].answers);
+
+for (var i = 0; i < g; i++) {
+  console.log(myVeryBigArray.question[0]);
   //for myVeryBigArray run it so we get the questions and answers printedout simontanously
   //myBigArray.questions.[i]  {
     var newtag = $('<h2>' + myVeryBigArray.question[i] + '</h2>');
@@ -55,9 +62,6 @@ for (var i = 0; i < myVeryBigArray.length; i++) {
     
   }
   
-
-
-
   // var myBigArray = {
   //   questions: {
   //     items: ["How many miles in a light-year?", "Which object falls faster?", "What is the best smash brother character?", "Stratus, Cirrus and Cumulus are types of what?"],
@@ -121,24 +125,24 @@ for (var i = 0; i < myVeryBigArray.length; i++) {
 
 
 
-  //   $(".pop1").on("click", function () {
-  //     if (counter === 1) {
-  //       for (var i = 0; i < q.length; i++) {
-  //         if (myBigArray.questions.items[i] == "How many miles in a light-year?") {
-  //           var newtag = $('<h2>' + q[i] + '</h2>');
-  //           $('#here').html(newtag);
-  //           for (var i = 0; i < a.length; i++) {
-  //             var newButton = $('<button>' + a[i] + '</button>');
-  //             $('#here').append(newButton);
-  //             $(newButton).addClass(" btn btn-warning btn-xs")
-  //           }
-  //           counter++;
-  //         }
-  //         console.log(counter);
-  //       }
-  //     }
-  //   })
-  // }
+    // $(".pop1").on("click", function () {
+    //   if (counter === 1) {
+    //     for (var i = 0; i < q.length; i++) {
+    //       if (myBigArray.questions.items[i] == "How many miles in a light-year?") {
+    //         var newtag = $('<h2>' + q[i] + '</h2>');
+    //         $('#here').html(newtag);
+    //         for (var i = 0; i < a.length; i++) {
+    //           var newButton = $('<button>' + a[i] + '</button>');
+    //           $('#here').append(newButton);
+    //           $(newButton).addClass(" btn btn-warning btn-xs")
+    //         }
+    //         counter++;
+    //       }
+    //       console.log(counter);
+    //     }
+    //   }
+    // })
+  }
 
   function decrement() {
     number--;
