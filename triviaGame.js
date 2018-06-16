@@ -40,12 +40,6 @@ $(document).ready(function () {
 var g = myVeryBigArray.length;
 console.log(g);
 
-console.log(myVeryBigArray[0].question);
-console.log(myVeryBigArray[1].question);
-console.log(myVeryBigArray[3].question);
-console.log(myVeryBigArray[0].answers[0]);
-console.log(myVeryBigArray[1].answers);
-
 for (var i = 0; i < g; i++) {
   console.log(myVeryBigArray.question[0]);
   //for myVeryBigArray run it so we get the questions and answers printedout simontanously
